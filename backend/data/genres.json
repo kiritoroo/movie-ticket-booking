@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Hành động",
+    "description": "Phim hành động với các cảnh chiến đấu, hành trình chống lại tội phạm và các pha rượt đuổi nghẹt thở.",
+    "movies": []
+  },
+  {
+    "name": "Tình cảm",
+    "description": "Phim tình cảm với những câu chuyện lãng mạn, đầy cảm xúc và tình yêu đẹp.",
+    "movies": []
+  },
+  {
+    "name": "Kinh dị",
+    "description": "Phim kinh dị với những câu chuyện ám ảnh, đầy sợ hãi và những sinh vật kinh dị.",
+    "movies": []
+  },
+  {
+    "name": "Hài hước",
+    "description": "Phim hài hước với những tình huống dở khóc dở cười và những nhân vật đầy hài hước.",
+    "movies": []
+  },
+  {
+    "name": "Viễn tưởng",
+    "description": "Phim viễn tưởng với các cảnh hành tinh, robot và vũ trụ đầy bí ẩn.",
+    "movies": []
+  },
+  {
+    "name": "Phiêu lưu",
+    "description": "Phim phiêu lưu với những chuyến hành trình đầy mạo hiểm và khám phá.",
+    "movies": []
+  },
+  {
+    "name": "Thần thoại",
+    "description": "Phim về các câu chuyện huyền thoại, thần thoại, và thế giới siêu nhiên.",
+    "movies": []
+  },
+  {
+    "name": "Tâm lý",
+    "description": "Phim tâm lý với những tình huống đầy khó khăn, tâm trạng phức tạp và những câu chuyện đầy cảm động.",
+    "movies": []
+  },
+  {
+    "name": "Hồi hộp",
+    "description": "Phim gây hồi hộp, căng thẳng với những câu chuyện kịch tính, đầy bất ngờ và tràn đầy sức ép.",
+    "movies": []
+  },
+  {
+    "name": "Hoạt hình",
+    "description": "Phim hoạt hình với các nhân vật hài hước, đáng yêu và kỳ diệu, thu hút khán giả mọi lứa tuổi.",
+    "movies": []
+  },
+  {
+    "name": "Tội phạm",
+    "description": "Phim tội phạm với những câu chuyện xoay quanh những tội ác, sự truy đuổi và những thủ đoạn đen tối.",
+    "movies": []
+  },
+  {
+    "name": "Gia đình",
+    "description": "Phim gia đình với những tình huống đời thường, những giây phút sum vầy và những câu chuyện đầy cảm động về gia đình.",
+    "movies": []
+  }
+]

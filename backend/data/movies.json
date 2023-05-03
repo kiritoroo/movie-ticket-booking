@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Gấu Đỏ Biến Hình",
+    "overview": "Với Gấu Đỏ Biến Hình, Disney và Pixar mang đến cô bé 13 tuổi Mei Lee (Rosalie Chiang lồng tiếng) đầy tự tin, hơi ngố, đang bị giằng xé giữa hình ảnh con ngoan và sự nổi loạn của tuổi mới lớn. Sự bảo vệ và đeo bám hơi thái quá của mẹ Ming (Sandra Oh lồng tiếng) cũng là một rắc rối mà cô bé phải đối mặt. Không chỉ bối rối vì các thay đổi về sở thích, tình cảm và cơ thể, cô bé còn có một vấn đề nan giải khác. Bất cứ khi nào quá phấn khích (một việc THƯỜNG XUYÊN xảy ra), cô bé sẽ biến hình thành một con gấu trúc đỏ khổng lồ! Sản phẩm của đạo diễn Domee Shi (đoạt giải Oscar với hoạt hình Pixar ngắn Bao) và nhà sản xuất Lindsey Collins. Một số phân đoạn có họa tiết hoặc hiệu ứng chớp sáng có thể gây ảnh hưởng lên các khán giả nhạy cảm. Một số phân đoạn có họa tiết hoặc hiệu ứng chớp sáng có thể gây ảnh hưởng lên các khán giả nhạy cảm.",
+    "runtime": 100,
+    "director": "Domee Shi",
+    "actors": ["Rosie Perez", "Sandra Oh", "Catherine Tate"],
+    "mpaaRating": "PG",
+    "imdbScore": 7.5,
+    "rating": 4.5,
+    "country": "USA",
+    "language": ["English"],
+    "releaseDate": "2023-03-11",
+    "posterPath": "/static/images/poster/poster_turning-red.jpg",
+    "trailerPath": "https://www.youtube.com/watch?v=XdKzUbAiswE",
+    "genres": []
+  },
+  {
+    "title": "Tom và Jerry: Quậy Tung New York",
+    "overview": "Tom and Jerry travel to New York City to start a new life.",
+    "runtime": 101,
+    "director": "Tim Story",
+    "actors": ["Chloë Grace Moretz", "Michael Peña", "Rob Delaney"],
+    "mpaaRating": "PG",
+    "imdbScore": 5.5,
+    "rating": 3.0,
+    "country": "USA",
+    "language": ["English"],
+    "releaseDate": "2023-02-18",
+    "posterPath": "/static/images/poster/poster_tom-and-jerry-newyork.jpg",
+    "trailerPath": "https://www.youtube.com/watch?v=WqzXujadi3w",
+    "genres": []
+  },
+  {
+    "title": "Your Name",
+    "overview": "Mitsuha, một nữ sinh trung học sống ở một thị trấn nhỏ bên ngoài Tokyo và Taki, một học sinh nam sống ở Tokyo, đột nhiên hoán đổi thân xác cho nhau. Họ bắt đầu tìm hiểu lẫn nhau qua những ghi chú và tin nhắn để giúp đỡ nhau trong cuộc sống của mình.",
+    "runtime": 106,
+    "director": "Makoto Shinkai",
+    "actors": ["Ryūnosuke Kamiki", "Mone Kamishiraishi"],
+    "mpaaRating": "PG",
+    "imdbScore": 8.4,
+    "rating": 5,
+    "country": "Japan",
+    "language": ["Japanese"],
+    "releaseDate": "2023-04-18",
+    "posterPath": "/static/images/poster/poster_your-name.jpg",
+    "trailerPath": "https://www.youtube.com/watch?v=_mifHzxFNQ4",
+    "genres": []
+  }
+]
