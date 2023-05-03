@@ -2,11 +2,11 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import path from 'path';
-import connectDatabase from './config/database';
+import connectDatabase from '@util/database';
+import movieRouter from '@route/movie';
+import swaggerDocs from "@util/swagger";
 
 dotenv.config();
-connectDatabase();
 
 const app: Express = express();
 const port = process.env.PORT;
@@ -24,10 +24,16 @@ app.use(
   })
 );
 
+app.use('/api', movieRouter);
+
 app.get('/', (req: Request, res: Response) => {
   res.send('Root Endpoint: Test API');
 });
 
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+
+  await connectDatabase();
+
+  swaggerDocs(app, port!);
 });

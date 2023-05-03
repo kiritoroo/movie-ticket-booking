@@ -1,13 +1,13 @@
-import { Request, Response } from 'express';
-import { Movie, IMovie } from '../models/movie';
-import { catchAsyncErrors } from "../middlewares/catchAsyncErrors";
+import { Request, Response, NextFunction } from 'express';
+import { Movie, IMovie } from '@model/movie';
+import { catchAsyncErrors } from "@middleware/catchAsyncErrors";
 
-export const getAllMovies = async (req: Request, res: Response) => {
+export const getAllMovies = async (req: Request, res: Response, next: NextFunction) => {
   const movies: IMovie[] = await Movie.find().populate('genres');
   res.json(movies);
 }
 
-export const getMovieById = catchAsyncErrors(async (req: Request, res: Response) => {
+export const getMovieById = catchAsyncErrors(async (req: Request, res: Response, next: NextFunction) => {
   const movie: IMovie | null = await Movie.findById(req.params.id).populate('genres');
   if (!movie) {
     res.status(404).json({ message: 'Movie not found' });
@@ -16,13 +16,13 @@ export const getMovieById = catchAsyncErrors(async (req: Request, res: Response)
   }
 })
 
-export const createMovie = catchAsyncErrors(async (req: Request, res: Response) => {
+export const createMovie = catchAsyncErrors(async (req: Request, res: Response, next: NextFunction) => {
   const movie: IMovie = new Movie(req.body);
   await movie.save();
   res.status(201).json(movie);
 })
 
-export const updateMovie = catchAsyncErrors(async (req: Request, res: Response) => {
+export const updateMovie = catchAsyncErrors(async (req: Request, res: Response, next: NextFunction) => {
   const movie: IMovie | null = await Movie.findById(req.params.id);
   if (!movie) {
     res.status(404).json({ message: 'Movie not found' });
@@ -46,7 +46,7 @@ export const updateMovie = catchAsyncErrors(async (req: Request, res: Response) 
   }
 })
 
-export const deleteMovie = catchAsyncErrors(async (req: Request, res: Response) => {
+export const deleteMovie = catchAsyncErrors(async (req: Request, res: Response, next: NextFunction) => {
   const movie: IMovie | null = await Movie.findById(req.params.id);
   if (!movie) {
     res.status(404).json({ message: 'Movie not found' });

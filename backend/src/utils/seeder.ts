@@ -1,9 +1,9 @@
 import dotenv from 'dotenv';
-import connectDatabase from '../config/database';
-import genresJson from '../data/genres.json';
-import moviesjson from '../data/movies.json';
-import { Genre, IGenre } from '../models/genre';
-import { Movie, IMovie } from '../models/movie';
+import connectDatabase from '@util/database';
+import genresJson from '@data/genres.json';
+import moviesjson from '@data/movies.json';
+import { Genre, IGenre } from '@model/genre';
+import { Movie, IMovie } from '@model/movie';
 
 const genresData: IGenre[] = Object.assign([], genresJson);
 const moviesData: IMovie[] = Object.assign([], moviesjson);
