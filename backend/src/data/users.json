@@ -1,0 +1,73 @@
+[
+    {
+      "name": "Nguyễn Thị Hương",
+      "email": "huong.nguyen@example.com",
+      "password": "password1",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    },
+    {
+      "name": "Trần Văn Tâm",
+      "email": "tam.tran@example.com",
+      "password": "password2",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    },
+    {
+      "name": "Lê Thị Lan",
+      "email": "lan.le@example.com",
+      "password": "password3",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    },
+    {
+      "name": "Phạm Đình Tùng",
+      "email": "tung.pham@example.com",
+      "password": "password4",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    },
+    {
+      "name": "Ngô Thị Huyền",
+      "email": "huyen.ngo@example.com",
+      "password": "password5",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    },
+    {
+      "name": "Vũ Thị Quỳnh",
+      "email": "quynh.vu@example.com",
+      "password": "password6",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    },
+    {
+      "name": "Hoàng Văn Minh",
+      "email": "minh.hoang@example.com",
+      "password": "password7",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    },
+    {
+      "name": "Bùi Thị Yến",
+      "email": "yen.bui@example.com",
+      "password": "password8",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    },
+    {
+      "name": "Đỗ Quang Trung",
+      "email": "trung.do@example.com",
+      "password": "password9",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    },
+    {
+      "name": "Phan Ngọc Trâm",
+      "email": "tram.phan@example.com",
+      "password": "password10",
+      "avatar": "/static/images/default_avatar.png",
+      "isAdmin": false
+    }
+  ]
+  

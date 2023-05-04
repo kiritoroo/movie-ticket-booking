@@ -3,7 +3,7 @@ import connectDatabase from '@util/database';
 import genresJson from '@data/genres.json';
 import moviesjson from '@data/movies.json';
 import cinemesJson from '@data/cinemas.json';
-import userJson from '@data/user.json'
+import userJson from '@data/users.json'
 
 import { Genre, IGenre } from '@model/genre.model';
 import { Movie, IMovie } from '@model/movie.model';

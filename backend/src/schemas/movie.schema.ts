@@ -1,82 +1,82 @@
 import { object, string, number, date, array, TypeOf } from "zod";
 
-  /**
-   * @openapi
-   * components:
-   *   schemas:
-   *     Movie:
-   *       type: object
-   *       properties:
-   *         title:
-   *           type: string
-   *           description: Movie title
-   *           example: The Shawshank Redemption
-   *         overview:
-   *           type: string
-   *           description: Movie overview
-   *           example: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.
-   *         runtime:
-   *           type: number
-   *           description: Movie runtime in minutes
-   *           example: 142
-   *         director:
-   *           type: string
-   *           description: Movie director
-   *           example: Frank Darabont
-   *         actors:
-   *           type: array
-   *           description: List of movie actors
-   *           items:
-   *             type: string
-   *           example:
-   *             - Tim Robbins
-   *             - Morgan Freeman
-   *         mpaaRating:
-   *           type: string
-   *           description: Movie MPAA rating
-   *           example: R
-   *         imdbScore:
-   *           type: number
-   *           description: Movie IMDb score
-   *           example: 9.3
-   *         rating:
-   *           type: number
-   *           description: Movie rating
-   *           example: 8.7
-   *         country:
-   *           type: number
-   *           description: Movie country of origin
-   *           example: United States
-   *         language:
-   *           type: array
-   *           description: List of movie languages
-   *           items:
-   *              type: string
-   *           example: 
-   *             - English
-   *             - japan
-   *         releaseDate:
-   *           type: string
-   *           format: date
-   *           description: Movie release date
-   *           example: 1994-09-23
-   *         posterPath:
-   *           type: string
-   *           description: URL path to movie poster image
-   *           example: /static/images/poster/poster_turning-red.jpg
-   *         trailerPath:
-   *           type: string
-   *           description: URL path to movie trailer video
-   *           example: https://www.youtube.com/watch?v=XdKzUbAiswE
-   *         genres:
-   *           type: array
-   *           items:
-   *             type: string
-   *           description: List of movie genres
-   *           example:
-   *             - id
-   *             - id
-   */
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Movie:
+ *       type: object
+ *       properties:
+ *         title:
+ *           type: string
+ *           description: Movie title
+ *           example: The Shawshank Redemption
+ *         overview:
+ *           type: string
+ *           description: Movie overview
+ *           example: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.
+ *         runtime:
+ *           type: number
+ *           description: Movie runtime in minutes
+ *           example: 142
+ *         director:
+ *           type: string
+ *           description: Movie director
+ *           example: Frank Darabont
+ *         actors:
+ *           type: array
+ *           description: List of movie actors
+ *           items:
+ *             type: string
+ *           example:
+ *             - Tim Robbins
+ *             - Morgan Freeman
+ *         mpaaRating:
+ *           type: string
+ *           description: Movie MPAA rating
+ *           example: R
+ *         imdbScore:
+ *           type: number
+ *           description: Movie IMDb score
+ *           example: 9.3
+ *         rating:
+ *           type: number
+ *           description: Movie rating
+ *           example: 8.7
+ *         country:
+ *           type: number
+ *           description: Movie country of origin
+ *           example: United States
+ *         language:
+ *           type: array
+ *           description: List of movie languages
+ *           items:
+ *              type: string
+ *           example: 
+ *             - English
+ *             - japan
+ *         releaseDate:
+ *           type: string
+ *           format: date
+ *           description: Movie release date
+ *           example: 1994-09-23
+ *         posterPath:
+ *           type: string
+ *           description: URL path to movie poster image
+ *           example: /static/images/poster/poster_turning-red.jpg
+ *         trailerPath:
+ *           type: string
+ *           description: URL path to movie trailer video
+ *           example: https://www.youtube.com/watch?v=XdKzUbAiswE
+ *         genres:
+ *           type: array
+ *           items:
+ *             type: string
+ *           description: List of movie genres
+ *           example:
+ *             - id
+ *             - id
+ */
 
 
 const payload = {
