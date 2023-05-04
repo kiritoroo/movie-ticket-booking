@@ -2,11 +2,15 @@ import dotenv from 'dotenv';
 import connectDatabase from '@util/database';
 import genresJson from '@data/genres.json';
 import moviesjson from '@data/movies.json';
+import cinemesJson from '@data/cinemas.json';
+
 import { Genre, IGenre } from '@model/genre.model';
 import { Movie, IMovie } from '@model/movie.model';
+import { Cinema, ICinema } from '@model/cinema.model';
 
 const genresData: IGenre[] = Object.assign([], genresJson);
 const moviesData: IMovie[] = Object.assign([], moviesjson);
+const cinemasdata: ICinema[] = Object.assign([], cinemesJson);
 
 dotenv.config();
 connectDatabase();
@@ -34,6 +38,10 @@ const seedMovies = async () => {
   }
 }
 
+const seedCinemas = async () => {
+
+}
+
 const seedRefs = async () => {
   const genres = await Genre.find();
   const movies = await Movie.find();
@@ -53,7 +61,8 @@ const seedRefs = async () => {
 const seedAlls = async () => {
   await Promise.all([
     seedGenres(),
-    seedMovies()]
+    seedMovies(),
+    seedCinemas()]
   )
 
   await seedRefs()
