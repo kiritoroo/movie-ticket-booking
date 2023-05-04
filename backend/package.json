@@ -6,8 +6,9 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/app.js",
-    "dev": "concurrently \"npx tsc -w\" \"npx tsc-alias -w\" \"nodemon -q dist/app.js\"",
-    "seed": "ts-node ./src/utils/seeder.ts"
+    "dev": "SET NODE_ENV=DEVELOPMENT& ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/app.ts",
+    "prod": "SET NODE_ENV=PRODUCTION& ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/app.ts",
+    "seed": "ts-node -r tsconfig-paths/register ./src/utils/seeder.ts"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +26,9 @@
     "pino": "^8.12.1",
     "pino-pretty": "^10.0.0",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^4.6.2"
+    "swagger-ui-express": "^4.6.2",
+    "ts-node-dev": "^2.0.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",

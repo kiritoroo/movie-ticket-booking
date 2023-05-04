@@ -1,5 +1,5 @@
 import { Document, Schema, model } from 'mongoose';
-import { Genre } from '@model/genre';
+import { Genre } from '@model/genre.model';
 
 export interface IMovie extends Document {
   title: string;

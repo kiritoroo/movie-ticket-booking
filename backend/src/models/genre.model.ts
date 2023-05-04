@@ -1,5 +1,5 @@
 import { model, Schema, Document } from 'mongoose';
-import { Movie } from '@model/movie';
+import { Movie } from '@model/movie.model';
 
 export interface IGenre extends Document {
   name: string;

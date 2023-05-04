@@ -2,14 +2,20 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import path from 'path';
 import connectDatabase from '@util/database';
-import movieRouter from '@route/movie';
 import swaggerDocs from "@util/swagger";
+import { errorHandler } from '@middleware/errorHandler';
+import logger from "@util/logger";
+
+import movieRouter from '@route/movie.route';
+import cinemaRouter from '@route/cinema.route';
 
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT;
+const port = process.env.PORT
+const mode = process.env.NODE_ENV
 
 app.set("trust proxy", 1)
 app.use(bodyParser.json({ limit: '50mb' }));
@@ -23,15 +29,18 @@ app.use(
     credentials: true,
   })
 );
+app.use("/static", cors(), express.static(path.join(__dirname, '/static')))
 
 app.use('/api', movieRouter);
+app.use('/api', cinemaRouter);
+app.use(errorHandler);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Root Endpoint: Test API');
 });
 
 app.listen(port, async () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+  logger.info(`Server is running at http://localhost:${port} in ${mode} mode.`);
 
   await connectDatabase();
 
