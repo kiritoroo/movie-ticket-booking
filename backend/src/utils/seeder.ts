@@ -3,14 +3,18 @@ import connectDatabase from '@util/database';
 import genresJson from '@data/genres.json';
 import moviesjson from '@data/movies.json';
 import cinemesJson from '@data/cinemas.json';
+import userJson from '@data/user.json'
 
 import { Genre, IGenre } from '@model/genre.model';
 import { Movie, IMovie } from '@model/movie.model';
 import { Cinema, ICinema } from '@model/cinema.model';
+import { User, IUser } from '@model/user.model';
 
 const genresData: IGenre[] = Object.assign([], genresJson);
 const moviesData: IMovie[] = Object.assign([], moviesjson);
-const cinemasdata: ICinema[] = Object.assign([], cinemesJson);
+const cinemasData: ICinema[] = Object.assign([], cinemesJson);
+const usersData: IUser[] = Object.assign([], userJson);
+
 
 dotenv.config();
 connectDatabase();
@@ -39,7 +43,27 @@ const seedMovies = async () => {
 }
 
 const seedCinemas = async () => {
+  try {
+    await Cinema.deleteMany();
+    console.log('🍀 [db]: Cinema are deleted.');
+    await Cinema.insertMany(cinemasData);
+    console.log('🍀 [db]: All Cinema are added.');
+  } catch (error) {
+    console.log(`❗ [server]: ${(error as Error).message}`);
+    process.exit(1);
+  }
+}
 
+const seedUser = async () => {
+  try {
+    await User.deleteMany();
+    console.log('🍀 [db]: Users are deleted.');
+    await User.insertMany(usersData);
+    console.log('🍀 [db]: All Users are added.');
+  } catch (error) {
+    console.log(`❗ [server]: ${(error as Error).message}`);
+    process.exit(1);
+  }
 }
 
 const seedRefs = async () => {
@@ -62,7 +86,9 @@ const seedAlls = async () => {
   await Promise.all([
     seedGenres(),
     seedMovies(),
-    seedCinemas()]
+    seedCinemas(),
+    seedUser()
+  ]
   )
 
   await seedRefs()

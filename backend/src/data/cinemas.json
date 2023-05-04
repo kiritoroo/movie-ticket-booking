@@ -5,5 +5,19 @@
     "address": "Lầu 5, Crescent Mall Đại lộ Nguyễn Văn Linh, Phú Mỹ Hưng Quận 7 TP. Hồ Chí Minh",
     "phone": "1900 6017",
     "showtimes": []
+  },
+  {
+    "name": "CGV",
+    "location": "Quận 1",
+    "address": "Tầng 5, TTTM Vincom Center Đồng Khởi, 72 Lê Thánh Tôn, Bến Nghé, Quận 1, TP.HCM",
+    "phone": "028 3914 1366",
+    "showtimes": []
+  },
+  {
+    "name": "Lotte Cinema",
+    "location": "Quận 7",
+    "address": "Tầng 5, TTTM SC VivoCity, 1058 Nguyễn Văn Linh, Tân Phong, Quận 7, TP.HCM",
+    "phone": "028 3775 2525",
+    "showtimes": []
   }
 ]
