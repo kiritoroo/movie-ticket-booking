@@ -2,9 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { catchAsyncErrors } from "@middleware/catchAsyncErrors";
 import ErrorResponse from "@util/ErrorResponse";
 import { Cinema, ICinema } from "@model/cinema.model";
-// import {
 
-// } from "@schema/cinema.schema"
 
 import {
   GetCinemaInput,

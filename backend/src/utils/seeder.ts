@@ -4,16 +4,21 @@ import genresJson from '@data/genres.json';
 import moviesjson from '@data/movies.json';
 import cinemesJson from '@data/cinemas.json';
 import userJson from '@data/users.json'
+import seatJson from '@data/seats.json'
 
 import { Genre, IGenre } from '@model/genre.model';
 import { Movie, IMovie } from '@model/movie.model';
 import { Cinema, ICinema } from '@model/cinema.model';
 import { User, IUser } from '@model/user.model';
+import { Seat, ISeat } from '@model/seat.model';
+import { Showtime } from '@model/showtime.model';
 
 const genresData: IGenre[] = Object.assign([], genresJson);
 const moviesData: IMovie[] = Object.assign([], moviesjson);
 const cinemasData: ICinema[] = Object.assign([], cinemesJson);
 const usersData: IUser[] = Object.assign([], userJson);
+const seatsData: ISeat[] = Object.assign([], seatJson);
+
 
 
 dotenv.config();
@@ -65,10 +70,23 @@ const seedUser = async () => {
     process.exit(1);
   }
 }
+const seedSeats = async () => {
+  try {
+    await Seat.deleteMany();
+    console.log('🍀 [db]: Seats are deleted.');
+    await Seat.insertMany(seatsData);
+    console.log('🍀 [db]: All Seats are added.');
+  } catch( error: any ) {
+    console.log(`❗ [server]: ${(error as Error).message}`);
+  }
+}
 
 const seedRefs = async () => {
   const genres = await Genre.find();
   const movies = await Movie.find();
+  const seast = await Seat.find();
+  const showtime = await Showtime.find();
+  const user = await User.find();
 
   genres[1].movies.push( movies[2]._id )
   genres[5].movies.push( movies[1]._id, movies[2]._id )
@@ -87,7 +105,8 @@ const seedAlls = async () => {
     seedGenres(),
     seedMovies(),
     seedCinemas(),
-    seedUser()
+    seedUser(),
+    seedSeats()
   ]
   )
 
