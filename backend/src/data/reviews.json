@@ -1,0 +1,71 @@
+[
+{
+    "user": [], 
+    "movie": [],
+    "rating": 5, 
+    "comment": "Great movie"
+  },
+  {
+    "user": [], 
+    "movie": [],
+    "rating": 4,
+    "comment": "Great movie, loved it!"
+  },
+  {
+    "user": [], 
+    "movie": [],
+    "rating": 3,
+    "comment": "Good movie, could have been better."
+  },
+  {
+    "user": [], 
+    "movie": [],
+    "rating": 5,
+    "comment": "One of the best movies I've ever seen!"
+  },
+  {
+    "user": [], 
+    "movie": [],
+    "rating": 2,
+    "comment": "Disappointing, didn't live up to my expectations."
+  },
+  {
+    "user": [], 
+    "movie": [],
+    "rating": 4,
+    "comment": "Great movie, would definitely recommend."
+  },
+  {
+    "user": [], 
+    "movie": [],
+    "rating": 4.5,
+    "comment": "A great movie with amazing acting!"
+    }, 
+  {
+    "user": [], 
+    "movie": [],
+    "rating": 3.2,
+    "comment": "Not bad, but not great either."
+    },
+    
+    {
+      "user": [], 
+      "movie": [],
+      "rating": 5,
+      "comment": "Absolutely loved this movie!"
+    },
+    
+    {
+      "user": [], 
+      "movie": [],
+      "rating": 2,
+      "comment": "Disappointing movie, wouldn't recommend."
+    },
+    
+    {
+      "user": [], 
+      "movie": [],
+      "rating": 4,
+      "comment": "Solid movie, definitely worth a watch."
+    }
+]

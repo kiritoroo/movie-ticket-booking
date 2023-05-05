@@ -5,6 +5,7 @@ import moviesjson from '@data/movies.json';
 import cinemesJson from '@data/cinemas.json';
 import userJson from '@data/users.json'
 import seatJson from '@data/seats.json'
+import reviewJson from '@data/reviews.json'
 
 import { Genre, IGenre } from '@model/genre.model';
 import { Movie, IMovie } from '@model/movie.model';
@@ -12,12 +13,16 @@ import { Cinema, ICinema } from '@model/cinema.model';
 import { User, IUser } from '@model/user.model';
 import { Seat, ISeat } from '@model/seat.model';
 import { Showtime } from '@model/showtime.model';
+import { Review,IReview } from '@model/review.model';
+
 
 const genresData: IGenre[] = Object.assign([], genresJson);
 const moviesData: IMovie[] = Object.assign([], moviesjson);
 const cinemasData: ICinema[] = Object.assign([], cinemesJson);
 const usersData: IUser[] = Object.assign([], userJson);
 const seatsData: ISeat[] = Object.assign([], seatJson);
+const reviewsData: IReview[] = Object.assign([], reviewJson);
+
 
 
 
@@ -80,13 +85,25 @@ const seedSeats = async () => {
     console.log(`❗ [server]: ${(error as Error).message}`);
   }
 }
+const seedReviews = async () => {
+  try {
+    await Review.deleteMany();
+    console.log('🍀 [db]: Review are deleted.');
+    const reviews = await Review.find();
+    await Review.insertMany(reviewsData);
+    console.log('🍀 [db]: All Review are added.');
+  } catch( error: any ) {
+    console.log(`❗ [server]: ${(error as Error).message}`)
+  }
+}
 
 const seedRefs = async () => {
   const genres = await Genre.find();
   const movies = await Movie.find();
-  const seast = await Seat.find();
+  const seats = await Seat.find();
   const showtime = await Showtime.find();
-  const user = await User.find();
+  const users = await User.find();
+  const reviews = await Review.find();
 
   genres[1].movies.push( movies[2]._id )
   genres[5].movies.push( movies[1]._id, movies[2]._id )
@@ -98,6 +115,7 @@ const seedRefs = async () => {
   movies[1].genres.push( genres[5]._id, genres[9]._id, genres[11]._id)
   movies[2].genres.push( genres[1]._id, genres[5]._id, genres[9]._id)
   await movies.map((movie) => movie.save())
+ 
 }
 
 const seedAlls = async () => {
@@ -106,7 +124,8 @@ const seedAlls = async () => {
     seedMovies(),
     seedCinemas(),
     seedUser(),
-    seedSeats()
+    seedSeats(),
+    seedReviews()
   ]
   )
 
