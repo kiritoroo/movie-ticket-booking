@@ -11,9 +11,11 @@ export interface IBooking extends Document {
 
 const bookingSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
-  movie: { type: Schema.Types.ObjectId, ref: 'Movie' },
-  seats: [{ type: Schema.Types.ObjectId, ref: 'Seat' }],
-  totalPrice: { type: Number, required: true }
+  showtime: { type: Schema.Types.ObjectId, ref: 'Showtime'},
+  seats: [{ type: Schema.Types.ObjectId, ref: 'Seat', required: true }],
+  totalPrice: { type: Number, required: true },
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
 }, { timestamps: true })
 
-export const Booking = model<IBooking>("Cinema", bookingSchema);
+export const Booking = model<IBooking>("Booking", bookingSchema);

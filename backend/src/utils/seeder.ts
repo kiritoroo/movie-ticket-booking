@@ -6,6 +6,8 @@ import cinemesJson from '@data/cinemas.json';
 import userJson from '@data/users.json'
 import seatJson from '@data/seats.json'
 import reviewJson from '@data/reviews.json'
+import bookingJson from '@data/booking.json'
+
 
 import { Genre, IGenre } from '@model/genre.model';
 import { Movie, IMovie } from '@model/movie.model';
@@ -14,6 +16,8 @@ import { User, IUser } from '@model/user.model';
 import { Seat, ISeat } from '@model/seat.model';
 import { Showtime } from '@model/showtime.model';
 import { Review,IReview } from '@model/review.model';
+import { Booking,IBooking } from '@model/booking.model';
+
 
 
 const genresData: IGenre[] = Object.assign([], genresJson);
@@ -22,6 +26,8 @@ const cinemasData: ICinema[] = Object.assign([], cinemesJson);
 const usersData: IUser[] = Object.assign([], userJson);
 const seatsData: ISeat[] = Object.assign([], seatJson);
 const reviewsData: IReview[] = Object.assign([], reviewJson);
+const bookingData: IBooking[] = Object.assign([], bookingJson);
+
 
 
 
@@ -96,6 +102,17 @@ const seedReviews = async () => {
     console.log(`❗ [server]: ${(error as Error).message}`)
   }
 }
+const seedBooking = async () => {
+  try {
+    await Booking.deleteMany();
+    console.log('🍀 [db]: Booking are deleted.');
+    const booking = await Booking.find();
+    await Booking.insertMany(bookingData);
+    console.log('🍀 [db]: All Booking are added.');
+  } catch( error: any ) {
+    console.log(`❗ [server]: ${(error as Error).message}`)
+  }
+}
 
 const seedRefs = async () => {
   const genres = await Genre.find();
@@ -104,6 +121,8 @@ const seedRefs = async () => {
   const showtime = await Showtime.find();
   const users = await User.find();
   const reviews = await Review.find();
+  const booking = await Booking.find();
+
 
   genres[1].movies.push( movies[2]._id )
   genres[5].movies.push( movies[1]._id, movies[2]._id )
@@ -125,9 +144,9 @@ const seedAlls = async () => {
     seedCinemas(),
     seedUser(),
     seedSeats(),
-    seedReviews()
-  ]
-  )
+    seedReviews(),
+    seedBooking()
+  ])
 
   await seedRefs()
   console.log('🍀 [db]: All seeding is done.');
