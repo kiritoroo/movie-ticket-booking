@@ -7,6 +7,8 @@ import userJson from '@data/users.json'
 import seatJson from '@data/seats.json'
 import reviewJson from '@data/reviews.json'
 import bookingJson from '@data/booking.json'
+import showtimeJson from '@data/showtimes.json'
+
 
 
 import { Genre, IGenre } from '@model/genre.model';
@@ -14,9 +16,11 @@ import { Movie, IMovie } from '@model/movie.model';
 import { Cinema, ICinema } from '@model/cinema.model';
 import { User, IUser } from '@model/user.model';
 import { Seat, ISeat } from '@model/seat.model';
-import { Showtime } from '@model/showtime.model';
+import { Showtime, IShowtime} from '@model/showtime.model';
 import { Review,IReview } from '@model/review.model';
 import { Booking,IBooking } from '@model/booking.model';
+
+
 
 
 
@@ -27,6 +31,8 @@ const usersData: IUser[] = Object.assign([], userJson);
 const seatsData: ISeat[] = Object.assign([], seatJson);
 const reviewsData: IReview[] = Object.assign([], reviewJson);
 const bookingData: IBooking[] = Object.assign([], bookingJson);
+const showtimesData: IShowtime[] = Object.assign([], showtimeJson);
+
 
 
 
@@ -113,6 +119,17 @@ const seedBooking = async () => {
     console.log(`❗ [server]: ${(error as Error).message}`)
   }
 }
+const seedShowtime = async () => {
+  try {
+    await Showtime.deleteMany();
+    console.log('🍀 [db]: Showtime are deleted.');
+    const showtime = await Showtime.find();
+    await Showtime.insertMany(showtimesData);
+    console.log('🍀 [db]: All Showtime are added.');
+  } catch( error: any ) {
+    console.log(`❗ [server]: ${(error as Error).message}`)
+  }
+}
 
 const seedRefs = async () => {
   const genres = await Genre.find();
@@ -145,7 +162,8 @@ const seedAlls = async () => {
     seedUser(),
     seedSeats(),
     seedReviews(),
-    seedBooking()
+    seedBooking(),
+    seedShowtime()
   ])
 
   await seedRefs()
