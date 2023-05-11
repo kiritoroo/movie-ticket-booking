@@ -11,12 +11,10 @@ import com.ute.movie_ticket_booking.mvp.models.MainModel;
 import com.ute.movie_ticket_booking.mvp.presenter.MainPresenter;
 import com.ute.movie_ticket_booking.mvp.views.MainView;
 import com.ute.movie_ticket_booking.ui.base.BaseActivity;
+import com.ute.movie_ticket_booking.ui.fragment.NowShowingMovieFragment;
 import com.ute.movie_ticket_booking.ui.fragment.TopMovieFragment;
 
-public class MainActivity extends BaseActivity<MainModel, MainView, MainPresenter>
-    implements
-    MainView,
-    TopMovieFragment.TopMovieFragmentListener {
+public class MainActivity extends BaseActivity<MainModel, MainView, MainPresenter> implements MainView {
 
   private ActivityMainBinding view;
 
@@ -26,6 +24,7 @@ public class MainActivity extends BaseActivity<MainModel, MainView, MainPresente
     view = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(view.getRoot());
     initTopMovieFragment();
+    initNowShowingMovieFragment();
   }
 
   private void initTopMovieFragment() {
@@ -33,6 +32,13 @@ public class MainActivity extends BaseActivity<MainModel, MainView, MainPresente
     TopMovieFragment topMovieFragment = new TopMovieFragment();
     fragmentManager.beginTransaction().add(view.topMovieContainer.getId(), topMovieFragment).commit();
   }
+
+  private void initNowShowingMovieFragment() {
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    NowShowingMovieFragment nowShowingMovieFragment = new NowShowingMovieFragment();
+    fragmentManager.beginTransaction().add(view.nowShowingMovieContainer.getId(), nowShowingMovieFragment).commit();
+  }
+
 
   @Override
   public MainView createView() {
@@ -44,8 +50,4 @@ public class MainActivity extends BaseActivity<MainModel, MainView, MainPresente
     return new MainPresenter();
   }
 
-  @Override
-  public void onFragmentInteraction(Uri uri) {
-
-  }
 }

@@ -64,6 +64,10 @@ import { object, string, number, date, array, TypeOf } from "zod";
  *           type: string
  *           description: URL path to movie poster image
  *           example: /static/images/poster/poster_turning-red.jpg
+*         thumbPath:
+ *           type: string
+ *           description: URL path to movie thumb image
+ *           example: /static/images/thumb/thumb_turning-red.jpg
  *         trailerPath:
  *           type: string
  *           description: URL path to movie trailer video
@@ -116,6 +120,9 @@ const payload = {
     }),
     posterPath: string({
       required_error: "Poster path is required",
+    }),
+    thumbPath: string({
+      required_error: "Thumb path is required",
     }),
     trailerPath: string({
       required_error: "Trailer path is required",

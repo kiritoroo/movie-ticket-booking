@@ -12,6 +12,7 @@
     "language": ["English"],
     "releaseDate": "2023-03-11",
     "posterPath": "/static/images/poster/poster_turning-red.jpg",
+    "thumbPath": "/static/images/thumb/thumb_turning-red.jpg",
     "trailerPath": "https://www.youtube.com/watch?v=XdKzUbAiswE",
     "genres": []
   },
@@ -28,6 +29,7 @@
     "language": ["English"],
     "releaseDate": "2023-02-18",
     "posterPath": "/static/images/poster/poster_tom-and-jerry-newyork.jpg",
+    "thumbPath": "/static/images/thumb/thumb_tom-and-jerry-newyork.jpg",
     "trailerPath": "https://www.youtube.com/watch?v=WqzXujadi3w",
     "genres": []
   },
@@ -44,6 +46,7 @@
     "language": ["Japanese"],
     "releaseDate": "2023-04-18",
     "posterPath": "/static/images/poster/poster_your-name.jpg",
+    "thumbPath": "/static/images/thumb/thumb_your-name.jpg",
     "trailerPath": "https://www.youtube.com/watch?v=_mifHzxFNQ4",
     "genres": []
   }

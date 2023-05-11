@@ -23,6 +23,7 @@ public class MovieEntity implements Serializable {
   private String[] language;
   private Date releaseDate;
   private String posterPath;
+  private String thumbPath;
   private String trailerPath;
   private List<GenreEntity> genres;
   private Date createdAt;
@@ -130,6 +131,14 @@ public class MovieEntity implements Serializable {
 
   public void setPosterPath(String posterPath) {
     this.posterPath = posterPath;
+  }
+
+  public String getThumbPath() {
+    return thumbPath;
+  }
+
+  public void setThumbPath(String thumbPath) {
+    this.thumbPath = thumbPath;
   }
 
   public String getTrailerPath() {

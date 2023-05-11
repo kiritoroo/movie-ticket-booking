@@ -26,7 +26,6 @@ import com.ute.movie_ticket_booking.ui.base.BaseFragment;
 public class TopMovieFragment extends BaseFragment<TopMovieModel, TopMovieView, TopMoviePresenter> implements TopMovieView {
   private RecyclerView topMovieRecyclerView;
   private TopMovieRecyclerViewAdapter topMovieRecyclerViewAdapter;
-  private TopMovieFragmentListener topMovieFragmentListener;
 
   public TopMovieFragment() {
 
@@ -50,17 +49,11 @@ public class TopMovieFragment extends BaseFragment<TopMovieModel, TopMovieView, 
   @Override
   public void onAttach(@NonNull Context context) {
     super.onAttach(context);
-    if (context instanceof TopMovieFragmentListener) {
-      topMovieFragmentListener = (TopMovieFragmentListener) context;
-    } else {
-      throw new RuntimeException(context.toString() + " must implement TopMovieFragmentListener");
-    }
   }
 
   @Override
   public void onDetach() {
     super.onDetach();
-    topMovieFragmentListener = null;
   }
 
   @Override
@@ -89,7 +82,4 @@ public class TopMovieFragment extends BaseFragment<TopMovieModel, TopMovieView, 
     return topMovieRecyclerViewAdapter;
   }
 
-  public interface TopMovieFragmentListener {
-    void onFragmentInteraction(Uri uri);
-  }
 }

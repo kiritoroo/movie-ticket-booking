@@ -33,6 +33,9 @@ public class TopMovieModel extends BaseModel {
             String posterPath = entity.getPosterPath();
             String fullPosterPath = ApiClient.BASE_URL + posterPath;
             entity.setPosterPath(fullPosterPath);
+            String thumbPath = entity.getThumbPath();
+            String fullThumbPath = ApiClient.BASE_URL + thumbPath;
+            entity.setThumbPath(fullThumbPath);
           }
 
           topMovieModelCallback.onFinishLoading(entities);

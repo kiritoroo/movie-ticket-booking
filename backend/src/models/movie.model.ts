@@ -14,6 +14,7 @@ export interface IMovie extends Document {
   language: string[];
   releaseDate: Date;
   posterPath: string;
+  thumbPath: string;
   trailerPath: string;
   genres: Schema.Types.ObjectId[]
   createdAt: Date;
@@ -33,6 +34,7 @@ const movieSchema: Schema = new Schema({
   language: [{ type: String, required: true }],
   releaseDate: { type: Date, required: true },
   posterPath: { type: String, required: true },
+  thumbPath: { type: String, required: true },
   trailerPath: { type: String, required: true },
   genres: [{ type: Schema.Types.ObjectId, ref: Genre }]
 }, { timestamps: true });

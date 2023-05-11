@@ -24,11 +24,13 @@ public class MovieDetailModel extends BaseModel {
       @Override
       public void onResponse(Call<MovieEntity> call, Response<MovieEntity> response) {
         if (response.isSuccessful() && response.body() != null) {
-          Log.d("getMovieDetailAndSave", "onResponseSuccess: Success");
           MovieEntity entity = response.body();
           String posterPath = entity.getPosterPath();
           String fullPosterPath = ApiClient.BASE_URL + posterPath;
           entity.setPosterPath(fullPosterPath);
+          String thumbPath = entity.getThumbPath();
+          String fullThumbPath = ApiClient.BASE_URL + thumbPath;
+          entity.setThumbPath(fullThumbPath);
           getMovieDetailListener.onSuccess(entity);
         } else {
           Log.d("getMovieDetailAndSave", "onResponseError: " + response.message());

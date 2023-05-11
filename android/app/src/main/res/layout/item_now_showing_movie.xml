@@ -1,6 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="0dp"
+        app:cardCornerRadius="5dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imageCardView"
+                android:layout_width="120dp"
+                android:layout_height="130dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/moviePoster"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:scaleX="1.05"
+                    android:scaleY="1.05"
+                    app:layout_constraintBottom_toTopOf="@+id/topMovieTitle"
+                    app:layout_constraintDimensionRatio="w,9:16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/test_poster" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/movieTitle"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:maxLines="3"
+                android:text="Turing Red"
+                android:textColor="@color/md_grey_600_color_code"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/topMovieCardView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/movieReleaseTimeWrapper"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingBottom="5dp"
+                android:weightSum="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/topMovieCardView"
+                app:layout_constraintTop_toBottomOf="@+id/movieTitle">
+
+                <TextView
+                    android:id="@+id/movieReleaseTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:drawableLeft="@drawable/ico_calendar"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#9DC5F0"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:gravity="center_vertical"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="12dp"
+                    android:text="18/05/2023"
+                    android:background="@color/md_blue_grey_50_color_code"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/movieRuntimeWrapper"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingBottom="5dp"
+                android:weightSum="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/topMovieCardView"
+                app:layout_constraintTop_toBottomOf="@+id/movieReleaseTimeWrapper">
+
+                <TextView
+                    android:id="@+id/movieRuntime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:drawableLeft="@drawable/ico_time"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="#9DC5F0"
+                    android:ellipsize="end"
+                    android:textSize="12dp"
+                    android:maxLines="1"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="5dp"                    android:gravity="center_vertical"
+                    android:text="1h20m"
+                    android:background="@color/md_blue_grey_50_color_code"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

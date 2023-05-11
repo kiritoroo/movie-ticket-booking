@@ -27,7 +27,6 @@ public class MovieDetailActivity extends BaseActivity<MovieDetailModel, MovieDet
     super.onCreate(savedInstanceState);
     view = ActivityMovieDetailBinding.inflate(getLayoutInflater());
     setContentView(view.getRoot());
-
     getPresenter().getMovieDetailAndDisplay();
   }
 
@@ -50,8 +49,11 @@ public class MovieDetailActivity extends BaseActivity<MovieDetailModel, MovieDet
   public void onUpdateView(MovieEntity entity) {
     TextView movieTitle = view.movieTitle;
     ImageView moviePoster = view.moviePoster;
+    ImageView movieThumb = view.movieThumb;
     TextView movieDirector = view.movieDirector;
     TextView movieActors = view.movieActors;
+    TextView movieLanguage = view.movieLanguage;
+    TextView movieDesc = view.movieDesc;
 
     movieTitle.setText(entity.getTitle());
     movieDirector.setText(entity.getDirector());
@@ -60,7 +62,14 @@ public class MovieDetailActivity extends BaseActivity<MovieDetailModel, MovieDet
       strActors.append(actor).append(", ");
     }
     movieActors.setText(strActors);
+    StringBuilder strLanguages = new StringBuilder();
+    for (String lang: entity.getLanguage()) {
+      strLanguages.append(lang).append(", ");
+    }
+    movieLanguage.setText(strLanguages);
+    movieDesc.setText(entity.getOverview());
     Picasso.get().load(entity.getPosterPath()).into(moviePoster);
+    Picasso.get().load(entity.getThumbPath()).into(movieThumb);
   }
 
   @Override

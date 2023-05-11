@@ -9,17 +9,18 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="30dp"
         android:elevation="0dp"
+        android:transitionName="2"
         android:layout_margin="20dp">
         <ImageView
             android:id="@+id/movieThumb"
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/test_poster" />
+            android:src="@drawable/test_thumb" />
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -75,22 +76,23 @@
         <LinearLayout
             android:id="@+id/movieDirectorWrapper"
             android:layout_width="270dp"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:paddingLeft="20dp"
+            android:paddingBottom="5dp"
             android:gravity="start"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/movieTitle"
-            android:weightSum="8"
+            android:weightSum="9"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Director: "
+                android:text="Đạo diễn: "
                 android:textStyle="bold"
                 android:textColor="@color/md_blue_grey_800_color_code"
-                android:layout_weight="2"/>
+                android:layout_weight="3"/>
 
             <TextView
                 android:id="@+id/movieDirector"
@@ -108,17 +110,20 @@
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
+            android:paddingBottom="5dp"
             android:gravity="start"
+            android:weightSum="9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/movieDirectorWrapper">
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Actors: "
+                android:text="Diễn viên: "
                 android:textStyle="bold"
                 android:textColor="@color/md_blue_grey_800_color_code"
-                android:layout_weight="2"/>
+                android:layout_weight="3"/>
 
             <TextView
                 android:id="@+id/movieActors"
@@ -130,6 +135,86 @@
                 android:layout_weight="6"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/movieLanguageWrapper"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingBottom="5dp"
+            android:gravity="start"
+            android:weightSum="9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/movieActorsWrapper">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Ngôn ngữ: "
+                android:textStyle="bold"
+                android:textColor="@color/md_blue_grey_800_color_code"
+                android:layout_weight="3"/>
+
+            <TextView
+                android:id="@+id/movieLanguage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Tiếng Anh"
+                android:layout_weight="6"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="130dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/movieDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineHeight="16dp"
+                android:text="Với Gấu Đỏ Biến Hình, Disney và Pixar mang đến cô bé 13 tuổi Mei Lee (Rosalie Chiang lồng tiếng) đầy tự tin, hơi ngố, đang bị giằng xé giữa hình ảnh con ngoan và sự nổi loạn của tuổi mới lớn. Sự bảo vệ và đeo bám hơi thái quá của mẹ Ming (Sandra Oh lồng tiếng) cũng là một rắc rối mà cô bé phải đối mặt. Không chỉ bối rối vì các thay đổi về sở thích, tình cảm và cơ thể, cô bé còn có một vấn đề nan giải khác. Bất cứ khi nào quá phấn khích (một việc THƯỜNG XUYÊN xảy ra), cô bé sẽ biến hình thành một con gấu trúc đỏ khổng lồ! Sản phẩm của đạo diễn Domee Shi (đoạt giải Oscar với hoạt hình Pixar ngắn Bao) và nhà sản xuất Lindsey Collins. Một số phân đoạn có họa tiết hoặc hiệu ứng chớp sáng có thể gây ảnh hưởng lên các khán giả nhạy cảm. Một số phân đoạn có họa tiết hoặc hiệu ứng chớp sáng có thể gây ảnh hưởng lên các khán giả nhạy cảm."
+                android:textSize="12dp" />
+
+        </ScrollView>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="206dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/gradient"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/bookTicket"
+            android:layout_width="200dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:backgroundTint="#9DC5F0"
+            android:text="Đặt vé"
+            android:textColor="@color/md_white_color_code"
+            android:textSize="15dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
