@@ -3,52 +3,60 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:layout_marginRight="10dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/topMovieCardView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="2dp">
+        android:layout_width="250dp"
+        android:layout_height="375dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
+            android:id="@+id/topMovieImageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:scaleX="1.05"
+            android:scaleY="1.05"
+            app:layout_constraintBottom_toTopOf="@+id/topMovieTitle"
+            app:layout_constraintDimensionRatio="w,9:16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/test_poster"/>
 
-            <ImageView
-                android:id="@+id/topMovieImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintBottom_toTopOf="@+id/topMovieTitle"
-                app:layout_constraintDimensionRatio="w,9:16"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/test_poster">
-            </ImageView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="206dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/gradient" />
 
-            <TextView
-                android:id="@+id/topMovieTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:text="Turning Red"
-                android:textAlignment="center"
-                android:textColor="@color/md_grey_800_color_code"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/topMovieTitle"
+            android:layout_width="256dp"
+            android:layout_height="74dp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:maxLines="3"
+            android:padding="20dp"
+            android:text="Turning Red"
+            android:textColor="@color/md_grey_800_color_code"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.cardview.widget.CardView>
+
 </FrameLayout>

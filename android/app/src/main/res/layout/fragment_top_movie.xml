@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.TopMovieFragment">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.ute.movie_ticket_booking.ui.fragment.TopMovieFragment"
+    android:paddingLeft="20dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Top movie"/>
 
-</FrameLayout>
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/topMovieRecyclerView"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:orientation="horizontal"
+       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+       tools:listitem="@layout/item_top_movie"/>
+
+</LinearLayout>

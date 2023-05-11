@@ -40,7 +40,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.listen(port, async () => {
-  logger.info(`Server is running at http://localhost:${port} in ${mode} mode.`);
+  logger.info(`Server is running at http://0.0.0.0:${port} in ${mode} mode.`);
 
   await connectDatabase();
 

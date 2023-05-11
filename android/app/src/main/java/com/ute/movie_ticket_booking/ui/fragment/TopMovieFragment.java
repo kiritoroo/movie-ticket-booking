@@ -1,66 +1,95 @@
 package com.ute.movie_ticket_booking.ui.fragment;
 
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.ute.movie_ticket_booking.R;
+import com.ute.movie_ticket_booking.databinding.FragmentTopMovieBinding;
+import com.ute.movie_ticket_booking.mvp.models.TopMovieModel;
+import com.ute.movie_ticket_booking.mvp.presenter.TopMoviePresenter;
+import com.ute.movie_ticket_booking.mvp.views.TopMovieView;
+import com.ute.movie_ticket_booking.ui.adapter.TopMovieRecyclerViewAdapter;
+import com.ute.movie_ticket_booking.ui.base.BaseFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TopMovieFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class TopMovieFragment extends Fragment {
-
-  // TODO: Rename parameter arguments, choose names that match
-  // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-  private static final String ARG_PARAM1 = "param1";
-  private static final String ARG_PARAM2 = "param2";
-
-  // TODO: Rename and change types of parameters
-  private String mParam1;
-  private String mParam2;
+public class TopMovieFragment extends BaseFragment<TopMovieModel, TopMovieView, TopMoviePresenter> implements TopMovieView {
+  private RecyclerView topMovieRecyclerView;
+  private TopMovieRecyclerViewAdapter topMovieRecyclerViewAdapter;
+  private TopMovieFragmentListener topMovieFragmentListener;
 
   public TopMovieFragment() {
-    // Required empty public constructor
-  }
 
-  /**
-   * Use this factory method to create a new instance of
-   * this fragment using the provided parameters.
-   *
-   * @param param1 Parameter 1.
-   * @param param2 Parameter 2.
-   * @return A new instance of fragment TopMovieFragment.
-   */
-  // TODO: Rename and change types and number of parameters
-  public static TopMovieFragment newInstance(String param1, String param2) {
-    TopMovieFragment fragment = new TopMovieFragment();
-    Bundle args = new Bundle();
-    args.putString(ARG_PARAM1, param1);
-    args.putString(ARG_PARAM2, param2);
-    fragment.setArguments(args);
-    return fragment;
   }
 
   @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    if (getArguments() != null) {
-      mParam1 = getArguments().getString(ARG_PARAM1);
-      mParam2 = getArguments().getString(ARG_PARAM2);
+  public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
+    return AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
+  }
+
+  @Nullable
+  @Override
+  public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    FragmentTopMovieBinding view  = FragmentTopMovieBinding.inflate(getLayoutInflater());
+    topMovieRecyclerView = view.topMovieRecyclerView;
+    topMovieRecyclerViewAdapter = new TopMovieRecyclerViewAdapter();
+    topMovieRecyclerView.setAdapter(topMovieRecyclerViewAdapter);
+    return view.getRoot();
+  }
+
+  @Override
+  public void onAttach(@NonNull Context context) {
+    super.onAttach(context);
+    if (context instanceof TopMovieFragmentListener) {
+      topMovieFragmentListener = (TopMovieFragmentListener) context;
+    } else {
+      throw new RuntimeException(context.toString() + " must implement TopMovieFragmentListener");
     }
   }
 
   @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                           Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_top_movie, container, false);
+  public void onDetach() {
+    super.onDetach();
+    topMovieFragmentListener = null;
+  }
+
+  @Override
+  public TopMovieView createView() {
+    return this;
+  }
+
+  @Override
+  public TopMoviePresenter createPresenter() {
+    return new TopMoviePresenter();
+  }
+
+  @Override
+  public void notifyFinishAttachingView() {
+    getPresenter().getTopMovieAndDisplay();
+  }
+
+
+  @Override
+  public void onDisplay() {
+
+  }
+
+  @Override
+  public TopMovieRecyclerViewAdapter getRecyclerViewAdapter() {
+    return topMovieRecyclerViewAdapter;
+  }
+
+  public interface TopMovieFragmentListener {
+    void onFragmentInteraction(Uri uri);
   }
 }
