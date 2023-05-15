@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-  
+
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/ico_home"
+        android:title="" />
+
+    <item
+        android:id="@+id/bottom_movie"
+        android:icon="@drawable/ico_movie"
+        android:title=""/>
+
+    <item
+        android:id="@+id/bottom_genre"
+        android:icon="@drawable/ico_genre"
+        android:title=""/>
+
 </menu>

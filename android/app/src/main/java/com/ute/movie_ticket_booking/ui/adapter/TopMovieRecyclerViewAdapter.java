@@ -58,7 +58,6 @@ public class TopMovieRecyclerViewAdapter extends RecyclerView.Adapter<TopMovieRe
 
         ActivityOptionsCompat options = ActivityOptionsCompat
             .makeSceneTransitionAnimation((Activity) context, holder.cardView, String.valueOf(1));
-
         context.startActivity(intent, options.toBundle());
       }
     });

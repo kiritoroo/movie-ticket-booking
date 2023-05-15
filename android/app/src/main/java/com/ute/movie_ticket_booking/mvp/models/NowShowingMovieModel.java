@@ -22,7 +22,7 @@ public class NowShowingMovieModel extends BaseModel {
     this.apiService = ApiClient.getApiClient().create(ApiService.class);
   }
 
-  public void getNowShowingMovieAndSave(final  GetNowShowingMovieListener nowShowingMovieListener) {
+  public void getNowShowingMovieAndSave(final GetNowShowingMovieListener nowShowingMovieListener) {
     Call<MovieEntity[]> getMoviesCall = apiService.getMovies();
     getMoviesCall.enqueue(new Callback<MovieEntity[]>() {
       @Override
@@ -50,6 +50,7 @@ public class NowShowingMovieModel extends BaseModel {
       @Override
       public void onFailure(Call<MovieEntity[]> call, Throwable t) {
         nowShowingMovieListener.onFailure(t.getLocalizedMessage());
+        Log.d("getNowShowingMovieAndSave", "onFailure: " + t.getLocalizedMessage());
       }
     });
   }

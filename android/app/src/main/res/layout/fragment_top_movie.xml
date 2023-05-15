@@ -6,8 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context="com.ute.movie_ticket_booking.ui.fragment.TopMovieFragment"
-    android:paddingLeft="20dp">
+    tools:context="com.ute.movie_ticket_booking.ui.fragment.TopMovieFragment">
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Phim đề xuất"
+       android:textSize="18dp"
+       android:textStyle="bold"
+       android:textColor="@color/md_black_color_code"
+       android:layout_weight="1"
+       android:textAlignment="textStart"
+       android:paddingLeft="20dp"
+       android:paddingRight="20dp"
+       android:drawableLeft="@drawable/ico_movie"
+       android:drawableTint="@color/colorMain"
+       android:drawablePadding="10dp"/>
 
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/topMovieRecyclerView"

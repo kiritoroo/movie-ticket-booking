@@ -20,7 +20,6 @@ export const getMovieById = catchAsyncErrors(async (
   next: NextFunction
 ) => {
   const { movieId } = req.params;
-  console.log(movieId)
 
   const movie: IMovie | null = await Movie.findById(movieId).populate('genres');
   if (!movie) {

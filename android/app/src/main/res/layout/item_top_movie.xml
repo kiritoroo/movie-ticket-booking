@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:layout_marginBottom="20dp"
-    android:layout_marginRight="10dp">
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginStart="10dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/topMovieCardView"
@@ -49,7 +49,7 @@
             android:maxLines="3"
             android:padding="20dp"
             android:text="Turning Red"
-            android:textColor="@color/md_grey_800_color_code"
+            android:textColor="@color/md_black_color_code"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -211,7 +211,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:backgroundTint="#9DC5F0"
+            android:background="@drawable/button_background"
             android:text="Đặt vé"
             android:textColor="@color/md_white_color_code"
             android:textSize="15dp"/>

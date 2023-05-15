@@ -17,8 +17,7 @@ import com.ute.movie_ticket_booking.mvp.views.MovieDetailView;
 import com.ute.movie_ticket_booking.ui.base.BaseActivity;
 
 public class MovieDetailActivity extends BaseActivity<MovieDetailModel, MovieDetailView, MovieDetailPresenter>
-    implements
-    MovieDetailView {
+    implements MovieDetailView {
 
   ActivityMovieDetailBinding view;
 

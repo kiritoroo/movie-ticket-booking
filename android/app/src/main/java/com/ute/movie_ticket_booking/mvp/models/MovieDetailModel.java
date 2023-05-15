@@ -18,7 +18,7 @@ public class MovieDetailModel extends BaseModel {
     this.apiService = ApiClient.getApiClient().create(ApiService.class);
   }
 
-  public void getMovieDetailAndSave(String movieId, GetMovieDetailListener getMovieDetailListener) {
+  public void getMovieDetailAndSave(String movieId, final GetMovieDetailListener getMovieDetailListener) {
     Call<MovieEntity> getMovieByIdCall = apiService.getMovieById(movieId);
     getMovieByIdCall.enqueue(new Callback<MovieEntity>() {
       @Override
@@ -40,8 +40,8 @@ public class MovieDetailModel extends BaseModel {
 
       @Override
       public void onFailure(Call<MovieEntity> call, Throwable t) {
-        getMovieDetailListener.onFailure(t.getLocalizedMessage());
         Log.d("getMovieDetailAndSave", "onFailure: " + t.getLocalizedMessage());
+        getMovieDetailListener.onFailure(t.getLocalizedMessage());
       }
     });
   }

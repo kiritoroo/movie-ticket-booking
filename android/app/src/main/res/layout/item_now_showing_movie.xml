@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
@@ -13,21 +14,22 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:elevation="0dp"
+        android:elevation="2dp"
         app:cardCornerRadius="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="177dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp">
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/gradient_movie_card">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/imageCardView"
-                android:layout_width="120dp"
-                android:layout_height="130dp"
+                android:layout_width="119dp"
+                android:layout_height="141dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -46,23 +48,23 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/test_poster" />
+                    app:srcCompat="@drawable/test_thumb" />
 
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/movieTitle"
                 android:layout_width="215dp"
-                android:layout_height="wrap_content"
+                android:layout_height="53dp"
                 android:gravity="start"
                 android:maxLines="3"
-                android:text="Turing Red"
-                android:textColor="@color/md_grey_600_color_code"
-                android:textStyle="bold"
-                android:textSize="15dp"
+                android:paddingLeft="15dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:paddingLeft="15dp"
+                android:text="Turing Red"
+                android:textColor="@color/md_black_color_code"
+                android:textSize="15dp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/topMovieCardView"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -85,18 +87,18 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="6"
+                    android:background="@color/md_blue_grey_50_color_code"
                     android:drawableLeft="@drawable/ico_calendar"
                     android:drawablePadding="10dp"
                     android:drawableTint="#9DC5F0"
                     android:ellipsize="end"
-                    android:maxLines="1"
                     android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingLeft="5dp"
                     android:paddingTop="3dp"
                     android:paddingBottom="3dp"
-                    android:paddingLeft="5dp"
-                    android:textSize="12dp"
                     android:text="18/05/2023"
-                    android:background="@color/md_blue_grey_50_color_code"/>
+                    android:textSize="12dp" />
 
             </LinearLayout>
 
@@ -118,19 +120,38 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="6"
+                    android:background="@color/md_blue_grey_50_color_code"
                     android:drawableLeft="@drawable/ico_time"
                     android:drawablePadding="10dp"
                     android:drawableTint="#9DC5F0"
                     android:ellipsize="end"
-                    android:textSize="12dp"
+                    android:gravity="center_vertical"
                     android:maxLines="1"
+                    android:paddingLeft="5dp"
                     android:paddingTop="3dp"
                     android:paddingBottom="3dp"
-                    android:paddingLeft="5dp"                    android:gravity="center_vertical"
                     android:text="1h20m"
-                    android:background="@color/md_blue_grey_50_color_code"/>
+                    android:textSize="12dp" />
 
             </LinearLayout>
+
+            <RatingBar
+                android:id="@+id/movieRating"
+                style="@style/RatingBar"
+                android:layout_width="238dp"
+                android:layout_height="41dp"
+                android:isIndicator="true"
+                android:max="5"
+                android:numStars="5"
+                android:progressTint="@color/colorMain"
+                android:rating="3.5"
+                android:scaleX=".4"
+                android:scaleY=".4"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageCardView"
+                app:layout_constraintTop_toBottomOf="@+id/movieRuntimeWrapper" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

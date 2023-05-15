@@ -39,6 +39,7 @@ public class NowShowingMovieViewPagerAdapter extends PagerAdapter implements Vie
     view.movieTitle.setText(movie.getTitle());
     view.movieReleaseTime.setText(ConverterUtils.convertDate(movie.getReleaseDate()));
     view.movieRuntime.setText(ConverterUtils.convertMinutes(movie.getRuntime()));
+    view.movieRating.setRating((float) movie.getRating());
     Picasso.get().load(movie.getThumbPath()).into(view.moviePoster);
 
     view.cardView.setOnTouchListener(this);

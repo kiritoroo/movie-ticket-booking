@@ -1,6 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="245dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="5dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/gradient_movie_card">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/moviePosterCardView"
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/moviePoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:scaleX="1.05"
+                android:scaleY="1.05"
+                android:src="@drawable/test_poster" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="-30dp"
+                android:background="@drawable/gradient" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movieRuntimeCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="-8dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/moviePosterCardView"
+            app:layout_constraintEnd_toEndOf="@+id/moviePosterCardView"
+            app:layout_constraintStart_toStartOf="@+id/moviePosterCardView">
+
+            <TextView
+                android:id="@+id/movieRuntime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ico_time"
+                android:drawablePadding="5dp"
+                android:drawableTint="#9DC5F0"
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:text="1h23m"
+                android:textSize="10sp"
+                android:gravity="center_vertical"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/movieTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:maxLines="2"
+            android:paddingTop="5sp"
+            android:paddingBottom="5sp"
+            android:text="Turing Red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/md_black_color_code"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.354"
+            app:layout_constraintStart_toEndOf="@+id/moviePosterCardView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/movieGenre"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="2sp"
+            android:paddingBottom="2sp"
+            android:paddingLeft="20dp"
+            android:text="Comedy, Adventure, Buddy"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/moviePosterCardView"
+            app:layout_constraintTop_toBottomOf="@+id/movieTitle" />
+
+        <RatingBar
+            android:id="@+id/movieRating"
+            style="@style/RatingBar"
+            android:layout_width="238dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="65dp"
+            android:isIndicator="true"
+            android:max="5"
+            android:numStars="5"
+            android:progressTint="@color/colorMain"
+            android:rating="3.5"
+            android:scaleX=".4"
+            android:scaleY=".4"
+            android:stepSize="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/moviePosterCardView"
+            app:layout_constraintTop_toBottomOf="@+id/movieGenre" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movieImdbCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="90dp"
+            android:layout_marginBottom="25dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/moviePosterCardView"
+            app:layout_constraintTop_toBottomOf="@+id/movieRating">
+
+            <TextView
+                android:id="@+id/movieImdb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#3DC373"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                android:text="9.5 IMDB"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

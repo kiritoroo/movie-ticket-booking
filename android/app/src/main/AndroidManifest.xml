@@ -21,8 +21,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.MovieListActivity"
+            android:exported="false"
+            android:theme="@style/AppThemeMain" />
+        <activity
             android:name=".ui.activity.MovieDetailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppThemeMain" />
         <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true"

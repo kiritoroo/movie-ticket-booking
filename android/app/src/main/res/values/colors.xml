@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Project Color -->
-    <color name="colorPrimary">#d50000</color>
+    <color name="colorMain">#9DC5F0</color>
+    <color name="colorPrimary">#9DC5F0</color>
     <color name="colorPrimaryDark">#9b0000</color>
     <color name="colorPrimaryLight">#ff5131</color>
     <color name="colorTextOnPrimary">#ffffff</color>
@@ -12,8 +13,8 @@
     <color name="colorTextOnSecondary">#ffffff</color>
     <color name="ic_background">#ffffff</color>
     <color name="statusBarColor">#00000000</color>
-    <color name="windowBackground">#EEEEEE</color>
-    <color name="windowBackgroundLight">#FAFAFA</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="windowBackgroundLight">#FFFFFF</color>
     <color name="darkFontColor">#000000</color>
     <color name="lightFontColor">#FFFFFF</color>
     <color name="availableFontColor">#000000</color>

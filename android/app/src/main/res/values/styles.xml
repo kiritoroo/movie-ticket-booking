@@ -15,4 +15,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/windowBackgroundLight</item>
     </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/md_green_50_color_code</item>
+        <item name="colorControlActivated">@color/colorMain</item>
+    </style>
 </resources>

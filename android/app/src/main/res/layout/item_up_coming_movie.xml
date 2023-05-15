@@ -1,6 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="2dp"
+        app:cardCornerRadius="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/gradient_movie_card">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imageCardView"
+                android:layout_width="120dp"
+                android:layout_height="140dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/moviePoster"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:scaleX="1.05"
+                    android:scaleY="1.05"
+                    app:layout_constraintBottom_toTopOf="@+id/topMovieTitle"
+                    app:layout_constraintDimensionRatio="w,9:16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/test_poster" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/movieTitle"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:maxLines="2"
+                android:paddingLeft="20dp"
+                android:paddingTop="5sp"
+                android:paddingBottom="5sp"
+                android:text="Turing Red"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_black_color_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.305"
+                app:layout_constraintStart_toEndOf="@+id/imageCardView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/movieGenre"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="2sp"
+                android:paddingBottom="2sp"
+                android:text="Comedy, Adventure, Buddy"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.341"
+                app:layout_constraintStart_toEndOf="@+id/imageCardView"
+                app:layout_constraintTop_toBottomOf="@+id/movieTitle" />
+
+
+            <TextView
+                android:id="@+id/movieReleaseTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:background="@color/md_blue_grey_50_color_code"
+                android:drawableLeft="@drawable/ico_calendar"
+                android:drawablePadding="10dp"
+                android:drawableTint="#9DC5F0"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingLeft="5dp"
+                android:paddingTop="3dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="3dp"
+                android:layout_marginLeft="20dp"
+                android:text="18/05/2023"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageCardView"
+                app:layout_constraintTop_toBottomOf="@+id/movieGenre" />
+
+            <TextView
+                android:id="@+id/movieRuntime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:background="@color/md_blue_grey_50_color_code"
+                android:drawableLeft="@drawable/ico_time"
+                android:drawablePadding="10dp"
+                android:drawableTint="#9DC5F0"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingLeft="5dp"
+                android:paddingTop="3dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:paddingBottom="3dp"
+                android:text="1h20m"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movieReleaseTime"
+                app:layout_constraintTop_toBottomOf="@+id/movieGenre" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

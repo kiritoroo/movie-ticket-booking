@@ -1,6 +1,7 @@
 package com.ute.movie_ticket_booking.ui.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,8 @@ import com.ute.movie_ticket_booking.databinding.FragmentNowShowingMovieBinding;
 import com.ute.movie_ticket_booking.mvp.models.NowShowingMovieModel;
 import com.ute.movie_ticket_booking.mvp.presenter.NowShowingMoviePresenter;
 import com.ute.movie_ticket_booking.mvp.views.NowShowingMovieView;
+import com.ute.movie_ticket_booking.ui.activity.MovieDetailActivity;
+import com.ute.movie_ticket_booking.ui.activity.MovieListActivity;
 import com.ute.movie_ticket_booking.ui.adapter.NowShowingMovieViewPagerAdapter;
 import com.ute.movie_ticket_booking.ui.base.BaseFragment;
 
@@ -43,6 +46,15 @@ public class NowShowingMovieFragment extends BaseFragment<NowShowingMovieModel, 
     nowShowingViewPager = view.viewPager;
     nowShowingMovieViewPagerAdapter = new NowShowingMovieViewPagerAdapter();
     nowShowingViewPager.setAdapter(nowShowingMovieViewPagerAdapter);
+
+    view.linkViewAllNowShowingMovie.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent = new Intent(getContext(), MovieListActivity.class);
+        getContext().startActivity(intent);
+      }
+    });
+
     return view.getRoot();
   }
 
@@ -70,7 +82,6 @@ public class NowShowingMovieFragment extends BaseFragment<NowShowingMovieModel, 
   public void notifyFinishAttachingView() {
     getPresenter().getNowShowingMovieAndDisplay();
   }
-
 
   @Override
   public ViewPager getNowShowingMovieViewPager() {

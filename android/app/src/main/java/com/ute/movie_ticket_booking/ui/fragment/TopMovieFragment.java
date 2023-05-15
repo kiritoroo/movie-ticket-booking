@@ -27,10 +27,6 @@ public class TopMovieFragment extends BaseFragment<TopMovieModel, TopMovieView, 
   private RecyclerView topMovieRecyclerView;
   private TopMovieRecyclerViewAdapter topMovieRecyclerViewAdapter;
 
-  public TopMovieFragment() {
-
-  }
-
   @Override
   public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
     return AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in);
